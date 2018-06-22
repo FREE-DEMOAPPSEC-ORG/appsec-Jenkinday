@@ -12,6 +12,9 @@ pipeline {
       }
     }
     stage('Deploy') {
+      options {
+        timeout(time: 15, unit: 'SECONDS')
+      }
       input {
         message 'Should we continue?'
       }
